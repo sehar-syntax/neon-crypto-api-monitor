@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queen's Protocol: Live API Monitor</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: radial-gradient(circle, #0f0c20 0%, #060409 100%); /* Deep Cyber-Space Violet */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .api-card { 
+            background: rgba(20, 16, 38, 0.7); /* Translucent dark purple */
+            padding: 35px; 
+            border-radius: 24px; 
+            box-shadow: 0 0 40px rgba(186, 85, 211, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.03); 
+            width: 360px; 
+            border: 1px solid rgba(186, 85, 211, 0.25); /* Glowing orchid border */
+            text-align: center; 
+            backdrop-filter: blur(10px); /* Glassmorphism glow */
+            transition: all 0.4s ease;
+        }
+        .api-card:hover { 
+            transform: translateY(-8px) scale(1.01); 
+            box-shadow: 0 0 50px rgba(186, 85, 211, 0.3);
+            border-color: rgba(236, 72, 153, 0.5); /* Shifts to hot pink on hover */
+        }
+        h2 { 
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); /* Electric Cyan Magic Gradient Text */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 0; 
+            font-size: 28px; 
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        p { 
+            color: #a78bfa; /* Soft neon violet text description */
+            font-size: 14px; 
+            line-height: 1.5;
+        }
+        button { 
+            width: 100%; 
+            padding: 14px; 
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); /* Electric Pink to Purple Punch Gradient */
+            border: none; 
+            color: white; 
+            font-size: 16px; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            margin-top: 15px; 
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+        }
+        button:hover { 
+            background: linear-gradient(135deg, #f43f5e 0%, #a855f7 100%);
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.6); /* Blazing hover neon glow */
+        }
+        button:active { transform: scale(0.98); }
+        .result-box { 
+            background: #090514; 
+            padding: 18px; 
+            border-radius: 12px; 
+            margin-top: 25px; 
+            border: 1px solid rgba(139, 92, 246, 0.2); 
+            font-size: 22px; 
+            font-weight: bold; 
+            min-height: 35px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            color: #f43f5e; /* Default bright status text */
+        }
+    </style>
+</head>
+<body>
+
+<div class="api-card">
+    <h2>Live Crypto Monitor</h2>
+    <p>Fetch real-time global cryptocurrency rates directly from public servers.</p>
+    <button id="fetchBtn">Get Bitcoin Price</button>
+    <div class="result-box" id="output">Click button to fetch data...</div>
+</div>
+
+<script src="api.js"></script>
+</body>
+</html>
